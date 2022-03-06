@@ -98,9 +98,9 @@ const questions = () => {
 
 // TODO: Create a function to write README file
 
-const writeToFile = (fileName, data) => {
+let writeFile = (fileName, data) => {
 
-    fs.writeToFile(fileName, data, err => {
+    fs.writeFile(fileName, data, err => {
         if (err) {
             return console.log(err);
         }
@@ -113,12 +113,12 @@ const writeToFile = (fileName, data) => {
 //  this initializes app
 
 function init() {
-    promptProject ()
+    questions ()
     .then(input =>{
         return generateMarkdown(input);
     })
     .then(markdown => {
-        writeToFile('readMe.md', markdown);
+        writeFile('README.md', markdown);
     })
     .catch(err => {
             console.log(err);
