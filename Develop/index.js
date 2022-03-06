@@ -22,11 +22,24 @@ const writeToFile = (fileName, data) => {
 }
 
 // TODO: Create a function to initialize app
+
+//  this initializes app
+
 function init() {
     promptProject ()
     .then(input =>{
         return generateMarkdown(input);
     })
+    .then(input =>{
+        return generateMarkdown(input);
+    })
+    .then(markdown => {
+        writeToFile('readMe.md', markdown);
+    })
+    .catch(err => {
+            console.log(err);
+    })
+
 }
 
 // Function call to initialize app
