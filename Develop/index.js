@@ -23,6 +23,8 @@ const questions = () => {
                 }
             }
         },
+
+        
         {
             type: 'input',
             name: 'description',
@@ -36,11 +38,12 @@ const questions = () => {
         }
      }
 },
+
 {
     type: 'checkbox',
     name: 'languages',
     message:'What languages does your application use?',
-    choices: ['HTML', 'CSS', 'JavaScript', 'Node']
+    choices: ['HTML', 'CSS', 'JavaScript', 'Node', 'React']
 },
 
     {type: 'input',
@@ -110,7 +113,7 @@ let writeFile = (fileName, data) => {
 
 // TODO: Create a function to initialize app
 
-//  this initializes app
+    //  this initializes app
 
 function init() {
     questions ()
